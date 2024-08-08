@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <!-- heading  -->
+        <h1>Weather App</h1>
+        <!-- tabs -->
+        <div class="tab-container">
+            <p class="tab yourTab">Your Weather</p>
+            <p class="tab searchTab">Search Weather</p>
+        </div>
+        <!-- Container  -->
+        <div class="main-container">
+
+            <!-- 1. Grant Access Container  -->
+             <div class="sub-container grant-access-container">
+
+                <img src="./assets/location.png" alt="location" width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p data-messageText>Allow Access To Get Weather Information</p>
+                <button data-grantAccess>Grant Access</button>
+
+
+             </div>
+             
+            <!-- 2. Search form container   -->
+            <form class="search-form-container">
+                
+                <input placeholder="Search for city...." data-searchInput>
+                <button type="submit">
+                    <img src="./assets/search.png" alt="search" width="15" height="15" loading="lazy">
+                </button>
+
+             </form>
+
+            <!-- 3. Loading screen Container  -->
+             <div class="sub-container loading-container ">
+
+                <img src="./assets/loading.gif" alt="loading" width="150" height="150"> 
+                <p>LOADING</p>
+
+             </div>
+            
+            <!-- 4. Show Weather Information Contianer  -->
+             <div class="sub-container weather-info-container">
+                <div class="place">
+                    <p data-place></p>
+                    <img crossorigin="anonymous" data-countryIcon>
+                </div>
+                
+                <p data-weatherDesc></p>
+                <img data-weatherIcon>
+                <p data-temp></p>
+                    <!-- parameter-container  -->
+                    <div class="parameter-container">
+                        <!-- parameter : Windspeed -->
+                        <div class="parameter">
+                            <img src="./assets/wind.png" alt="parameter-icon">
+                            <p class="parameter-title">Windspeed</p>
+                            <p class="parameter-value" data-windspeed>3.13m/s</p>
+                        </div>
+                        <!-- parameter : Humidity -->
+                        <div class="parameter">
+                            <img src="./assets/humidity.png" alt="parameter-icon">
+                            <p class="parameter-title">Humidity</p>
+                            <p class="parameter-value" data-humidity>91%</p>
+                        </div>
+                        <!-- parameter : Cloudiness -->
+                        <div class="parameter">
+                            <img src="./assets/cloud.png" alt="parameter-icon">
+                            <p class="parameter-title">Clouds</p>
+                            <p class="parameter-value" data-cloudiness>100%</p>
+                        </div>
+
+                    </div>
+
+             </div>
+             
+            <!-- 5. fetch error container   -->
+            <div class="sub-container error-container">
+                
+                <img src="./assets/not-found.png" alt="not-found" data-errorImage>
+                <p data-errorText></p>
+
+            </div>
+             
+
+        </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
